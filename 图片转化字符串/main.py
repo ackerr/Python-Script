@@ -1,5 +1,6 @@
-from PIL import Image
 import argparse
+
+from PIL import Image
 
 ###################################
 # 1. 获取图片对象                   #
@@ -8,7 +9,8 @@ import argparse
 ###################################
 
 # 对应的灰度值
-ascii_char = list("$@AB%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
+# pylint c0103
+char_list = list(r"$@AB%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
 
 
 def get_args():
@@ -24,13 +26,13 @@ def get_args():
     return image, output_file, width, height
 
 
-def get_gary_char(r: int, g: int, b: int, alpha: int =256) -> str:
+def get_gary_data(red: int, green: int, blue: int, alpha: int = 256) -> str:
     """ 获取对应的灰度值 """
     if alpha == 0:
         return ' '  # 需要补个空格
-    gary = int((2126 * r + 7152 * g + 722 * b) / 10000)
-    index = int((gary / (alpha+1)) * len(ascii_char))  # 获取对应的灰度索引
-    return ascii_char[index]
+    gary = int((2126 * red + 7152 * green + 722 * blue) / 10000)
+    index = int((gary / (alpha + 1)) * len(char_list))  # 获取对应的灰度索引
+    return char_list[index]
 
 
 def save_output_image(input_image, output_image, width, height):
@@ -40,11 +42,11 @@ def save_output_image(input_image, output_image, width, height):
     image = image.resize((width, height), Image.NEAREST)
     for i in range(height):
         for j in range(width):
-            content += get_gary_char(*image.getpixel((j, i)))
+            content += get_gary_data(*image.getpixel((j, i)))
         content += '\n'
     print(content)
-    with open(output_image, 'w') as f:
-        f.write(content)
+    with open(output_image, 'w') as image:
+        image.write(content)
 
 
 def main():
@@ -55,4 +57,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

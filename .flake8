@@ -1,0 +1,9 @@
+[flake8]
+ignore = F405, C901
+max-line-length = 120
+max-complexity = 40
+exclude = 
+    env/*
+import-order-style = pycharm
+application-import-names=
+    图片转化字符串,
