@@ -52,7 +52,8 @@ class Game:
 
     @property
     def is_lose(self):
-        self.over = not any(self.can_move(move) for move in self.action.actions)
+        self.over = not any(
+            self.can_move(move) for move in self.action.actions)
         return self.over
 
     def can_move(self, direction):
@@ -79,7 +80,8 @@ class Game:
 
     def _restart_or_exit(self):
         self.screen.draw()
-        return 'init' if self.action.get_player_action() == Action.RESTART else 'exit'
+        return 'init' if self.action.get_player_action(
+        ) == Action.RESTART else 'exit'
 
     def state_win(self):
         return self._restart_or_exit()

@@ -5,7 +5,13 @@ class Screen:
     lose_string = '        GAME OVER'
     win_string = '         YOU WIN'
 
-    def __init__(self, screen=None, score=0, best_score=0, is_win=False, is_lose=False, grid=None):
+    def __init__(self,
+                 screen=None,
+                 score=0,
+                 best_score=0,
+                 is_win=False,
+                 is_lose=False,
+                 grid=None):
         self.screen = screen
         self.score = score
         self.best_score = best_score
@@ -18,7 +24,8 @@ class Screen:
         self.screen.addstr(string + '\n')
 
     def draw_row(self, row):
-        self.cast(''.join('|{: ^5} '.format(num) if num > 0 else '|      ' for num in row) + '|')
+        self.cast(''.join('|{: ^5} '.format(num) if num > 0 else '|      '
+                          for num in row) + '|')
 
     def draw(self):
         self.screen.clear()

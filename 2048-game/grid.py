@@ -38,7 +38,8 @@ class Grid:
 
     def add_random_item(self):
         """ 空白区域随机生成一个2或4 """
-        i, j = choice([(i, j) for i in range(self.size) for j in range(self.size) if self.cells[i][j] == 0])
+        i, j = choice([(i, j) for i in range(self.size)
+                       for j in range(self.size) if self.cells[i][j] == 0])
         self.cells[i][j] = 4 if randrange(100) > 85 else 2
 
     def transpose(self):
@@ -50,6 +51,7 @@ class Grid:
     # 移动合并
     def action_left(self, row):
         """ 向左合并 """
+
         def tighten(row):
             new_row = [i for i in row if i != 0]
             new_row += [0 for _ in range(len(row) - len(new_row))]
@@ -101,6 +103,7 @@ class Grid:
             if row[i] != 0 and row[i + 1] != row[i]:
                 return True
             return False
+
         return any(change(i) for i in range(len(row) - 1))
 
     def can_move_left(self):
