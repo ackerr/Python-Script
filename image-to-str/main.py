@@ -10,9 +10,7 @@ from PIL import Image
 
 # 对应的灰度值
 # pylint c0103
-char_list = list(
-    r"$@AB%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
-)
+char_list = list(r"$@AB%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
 
 
 def get_args():
