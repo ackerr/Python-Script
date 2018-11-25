@@ -426,20 +426,7 @@ known-third-party=enchant
 
 # List of module names for which are in a certain topology. Module imports should be forwards.
 module-topology=
-    forseti.utils,
-    forseti.core,
-    forseti.user,
-    forseti.video,
-    forseti.wechat,
-    forseti.business,
-    forseti.pay,
-    forseti.choice,
-    forseti.coupon,
-    forseti.bargain,
-    forseti.moment,
-    forseti.mall,
-    forseti.order,
-    forseti.api,
+    
 
 
 [CLASSES]
