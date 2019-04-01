@@ -5,3 +5,5 @@ typescript
 
 *.csv
 *.pkl
+*.json
+*.jpg

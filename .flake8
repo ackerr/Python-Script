@@ -6,4 +6,3 @@ exclude =
     env/*
 import-order-style = pycharm
 application-import-names=
-    图片转化字符串,
