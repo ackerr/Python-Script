@@ -1,10 +1,12 @@
 .idea/
 env/
-*/__pycache__/
-typescript
+__pycache__/
+
+Pipfile.lock
 
 *.csv
 *.pkl
 *.json
 *.jpg
 .env
+.python-version
