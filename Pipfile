@@ -8,6 +8,7 @@ pylint = "==2.1.1"
 yapf = "==0.24.0"
 flake8 = "==3.5.0"
 ipython = ">=7.0.1"
+black = "19.10b0"
 
 [packages]
 Pillow = "==5.2.0"
