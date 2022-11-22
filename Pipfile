@@ -11,7 +11,7 @@ ipython = ">=7.0.1"
 black = "19.10b0"
 
 [packages]
-Pillow = "==5.2.0"
+Pillow = "==9.3.0"
 itchat = "==1.3.10"
 requests = "==2.20.0"
 matplotlib = "==3.0.2"
